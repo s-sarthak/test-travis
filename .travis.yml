@@ -5,7 +5,8 @@ php:
 
 before_script:
   - composer install
-  - composer dump-autoload
+  - cp .env.example .env
+  - php artisan key:generate
 
 script:
   - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
